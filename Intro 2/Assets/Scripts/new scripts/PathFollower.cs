@@ -10,7 +10,7 @@ public class PathFollower : MonoBehaviour
     [SerializeField] private Path path;
     [SerializeField] private float speed = 5f;
 
-    private void Update()
+    void Update()
     {
         if (path.GetCurrentWayPoint().Equals(null)) return;
 

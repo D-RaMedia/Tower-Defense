@@ -63,6 +63,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Prefabs\Enemy.cs" />
+    <Compile Include="Assets\Prefabs\EnemyHealth.cs" />
+    <Compile Include="Assets\Scripts\Audio.cs" />
+    <Compile Include="Assets\Scripts\CameraShake.cs" />
+    <Compile Include="Assets\Scripts\DestroyObject.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\NameCollector.cs" />
     <Compile Include="Assets\Scripts\NameHolder.cs" />
@@ -71,6 +76,12 @@
     <Compile Include="Assets\Scripts\new scripts\SimpleCamera.cs" />
     <Compile Include="Assets\Scripts\new scripts\Waypoint.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
+    <Compile Include="Assets\Scripts\ScoreScript.cs" />
+    <Compile Include="Assets\Scripts\Towers\EnemyRangeChecker.cs" />
+    <Compile Include="Assets\Scripts\Towers\MultiTargetTower.cs" />
+    <Compile Include="Assets\Scripts\Towers\SingleTargetTower.cs" />
+    <Compile Include="Assets\Scripts\Towers\Tower.cs" />
+    <Compile Include="Assets\Scripts\Towers\TowerBuilder.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Diego/OneDrive - Mediacollege Amsterdam/GitHub/Expanding-Space-2/Tower-Defense/Intro 2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
