@@ -12,7 +12,7 @@ public class MultiTargetTower : Tower
         _enemies = _rangeChecker.GetallEnemiesInRange();
         if(_enemies != null)
         {
-            if(_enemies.Length >= 1)
+            if(_enemies.Length >= 20)
             {
                 return true;
             }
@@ -24,7 +24,7 @@ public class MultiTargetTower : Tower
     {
         foreach (var enemy in _enemies)
         {
-            /*'Debug.Log("MuliTargetTower >> Val deze vijaand aan: " + enemy);*/
+            //Debug.Log("MuliTargetTower >> Val deze vijand aan: " + enemy);
         }
     }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class EnemyHealth : PathFollower
+public class EnemyHealth : MonoBehaviour
 {
     [SerializeField] private float _startHealth = 3;
 

@@ -63,6 +63,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\HealthBar.cs" />
     <Compile Include="Assets\Prefabs\Enemy.cs" />
     <Compile Include="Assets\Prefabs\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Audio.cs" />
@@ -74,9 +75,11 @@
     <Compile Include="Assets\Scripts\new scripts\Path.cs" />
     <Compile Include="Assets\Scripts\new scripts\PathFollower.cs" />
     <Compile Include="Assets\Scripts\new scripts\SimpleCamera.cs" />
+    <Compile Include="Assets\Scripts\new scripts\TowerPlacement.cs" />
     <Compile Include="Assets\Scripts\new scripts\Waypoint.cs" />
     <Compile Include="Assets\Scripts\PlayerHealth.cs" />
     <Compile Include="Assets\Scripts\ScoreScript.cs" />
+    <Compile Include="Assets\Scripts\Towers\customGrid.cs" />
     <Compile Include="Assets\Scripts\Towers\EnemyRangeChecker.cs" />
     <Compile Include="Assets\Scripts\Towers\MultiTargetTower.cs" />
     <Compile Include="Assets\Scripts\Towers\SingleTargetTower.cs" />

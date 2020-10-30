@@ -4,9 +4,9 @@ using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 
-public class PathFollower : MonoBehaviour
+public class PathFollower : PlayerHealth
 {
-    [SerializeField] private UnityEvent pathEnd;
+    [SerializeField] public UnityEvent pathEnd;
     [SerializeField] private Path path;
     [SerializeField] private float speed = 5f;
 
@@ -19,7 +19,13 @@ public class PathFollower : MonoBehaviour
 
         if (transform.position != targetPos) return;
 
+        End();
+    }
+
+    public void End()
+    {
         if (path.Next()) return;
+        TakenDamage(20);
         pathEnd.Invoke();
         Destroy(this.gameObject);
     }
