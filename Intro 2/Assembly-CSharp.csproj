@@ -64,11 +64,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\HealthBar.cs" />
-    <Compile Include="Assets\Prefabs\Enemy.cs" />
-    <Compile Include="Assets\Prefabs\EnemyHealth.cs" />
     <Compile Include="Assets\Scripts\Audio.cs" />
     <Compile Include="Assets\Scripts\CameraShake.cs" />
     <Compile Include="Assets\Scripts\DestroyObject.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Enemy.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemyHealth.cs" />
+    <Compile Include="Assets\Scripts\Enemy\EnemySpawner.cs" />
+    <Compile Include="Assets\Scripts\Enemy\Health.cs" />
+    <Compile Include="Assets\Scripts\Enemy\SpawnPoint.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
     <Compile Include="Assets\Scripts\NameCollector.cs" />
     <Compile Include="Assets\Scripts\NameHolder.cs" />
@@ -82,9 +85,11 @@
     <Compile Include="Assets\Scripts\Towers\customGrid.cs" />
     <Compile Include="Assets\Scripts\Towers\EnemyRangeChecker.cs" />
     <Compile Include="Assets\Scripts\Towers\MultiTargetTower.cs" />
+    <Compile Include="Assets\Scripts\Towers\NewBehaviourScript.cs" />
     <Compile Include="Assets\Scripts\Towers\SingleTargetTower.cs" />
     <Compile Include="Assets\Scripts\Towers\Tower.cs" />
     <Compile Include="Assets\Scripts\Towers\TowerBuilder.cs" />
+    <Compile Include="Assets\Scripts\Towers\TowerSpawn.cs" />
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>C:/Users/Diego/OneDrive - Mediacollege Amsterdam/GitHub/Expanding-Space-2/Tower-Defense/Intro 2/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>

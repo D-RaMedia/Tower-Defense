@@ -4,27 +4,20 @@ using UnityEngine;
 
 public class MultiTargetTower : Tower
 {
-    private Enemy[] _enemies;
-    public Enemy enemy;
-
+    private Enemy _target;
     protected override bool CanAttack()
     {
-        _enemies = _rangeChecker.GetallEnemiesInRange();
-        if(_enemies != null)
-        {
-            if(_enemies.Length >= 20)
-            {
-                return true;
-            }
-        }
-        return false;
+        Enemy[] enemies = EnemyInRangeChecker.GetallEnemiesInRange();
+        if (enemies.Length <= 0) return false;
+        foreach (var e in enemies) Targets.Add(e);
+        return true;
     }
-
     protected override void Attack()
     {
-        foreach (var enemy in _enemies)
+        foreach (var target in Targets)
         {
-            //Debug.Log("MuliTargetTower >> Val deze vijand aan: " + enemy);
+            target.enemyHealth.GiveDamage(damage);
         }
+        Targets.Clear();
     }
 }

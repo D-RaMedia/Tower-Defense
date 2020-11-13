@@ -4,30 +4,53 @@ using UnityEngine;
 
 public class Tower : MonoBehaviour
 {
-    protected EnemyRangeChecker _rangeChecker;
-    private Enemy _target;
-    private Enemy _enemies;
-    // Start is called before the first frame update
-    private void Awake()
+    [SerializeField] protected int delayBetweenAttacks = 10;
+    [SerializeField] protected int damage = 10;
+    [SerializeField] private bool rotateToTarget = true;
+    protected EnemyRangeChecker EnemyInRangeChecker;
+    public List<Enemy> Targets;
+
+    private float AttackTimer = 0;
+
+    void Awake()
     {
-        _rangeChecker = GetComponent<EnemyRangeChecker>();
-        Debug.Log(GetComponent<EnemyRangeChecker>());
+        Targets = new List<Enemy>();
+        EnemyInRangeChecker = GetComponent<EnemyRangeChecker>();
     }
 
     void Update()
     {
-        // als we niet kunnen aanvallen, Ga dan uit de update functie
-        if (!CanAttack()) return;
-        
-        Attack();
+        AttackTimer += Time.deltaTime;
+
+        Enemy closest = EnemyInRangeChecker.GetFirstEnemyInRange();
+        if (closest != null && rotateToTarget) RotateToTarget(closest.gameObject.transform.position);
+
+        if (AttackTimer > delayBetweenAttacks)
+        {
+            if (!CanAttack()) return;
+
+            Attack();
+            AttackTimer = 0;
+        }
     }
 
+    private void RotateToTarget(Vector3 location)
+    {
+        Vector3 dir = location - transform.position;
+        dir.y = 3;
+        Quaternion rot = Quaternion.LookRotation(dir);
+        transform.rotation = Quaternion.Slerp(transform.rotation, rot, 8f * Time.deltaTime);
+    }
+
+    protected virtual void Attack()
+    {
+
+    }
     protected virtual bool CanAttack()
     {
         return false;
     }
-
-    protected virtual void Attack()
+    protected virtual void AttackAnimation()
     {
 
     }

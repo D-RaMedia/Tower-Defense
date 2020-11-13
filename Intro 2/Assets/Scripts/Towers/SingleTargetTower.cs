@@ -8,12 +8,17 @@ public class SingleTargetTower : Tower
 
     protected override bool CanAttack()
     {
-        _target = _rangeChecker.GetFirstEnemyInRange();
-        return _target != null;
+        Enemy enemy = EnemyInRangeChecker.GetFirstEnemyInRange();
+        if (enemy == null) return false;
+        Targets.Add(enemy);
+        return true;
     }
-
     protected override void Attack()
     {
-        Debug.Log(message: "SingleTargetTower >> Ik heb 1 target en deze val aan!");
+        foreach (var target in Targets)
+        {
+            target.enemyHealth.GiveDamage(damage);
+        }
+        Targets.Clear();
     }
 }
